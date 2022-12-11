@@ -6,7 +6,7 @@ import com.nttdata.spring.repository.Order;
 import com.nttdata.spring.repository.Product;
 
 /**
- * Implementación paraCeuta, Melilla y Canarias de la interfaz Servicio de pedido
+ * Implementación para Ceuta, Melilla y Canarias de la interfaz Servicio de pedido
  * 
  * @author manoli
  *

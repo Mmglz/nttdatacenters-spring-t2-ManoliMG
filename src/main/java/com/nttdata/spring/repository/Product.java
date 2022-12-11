@@ -1,7 +1,7 @@
 package com.nttdata.spring.repository;
 
 /**
- * Clase producto
+ * Clase Producto
  * 
  * @author manoli
  *

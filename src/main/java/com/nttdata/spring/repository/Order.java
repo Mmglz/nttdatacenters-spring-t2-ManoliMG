@@ -3,7 +3,7 @@ package com.nttdata.spring.repository;
 import java.util.List;
 
 /**
- * Clase pedido
+ * Clase Pedido
  * 
  * @author manoli
  *

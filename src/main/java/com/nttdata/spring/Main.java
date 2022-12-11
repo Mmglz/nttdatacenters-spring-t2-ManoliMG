@@ -2,12 +2,14 @@ package com.nttdata.spring;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.nttdata.spring.repository.Order;
 import com.nttdata.spring.repository.Product;
 import com.nttdata.spring.services.GenericServiceI;
@@ -21,6 +23,9 @@ import com.nttdata.spring.services.OrderServiceI;
  */
 @SpringBootApplication
 public class Main implements CommandLineRunner {
+	
+	/** LOGGER **/
+	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
 	/** Servicio general del pedido */
 	@Autowired
@@ -47,8 +52,12 @@ public class Main implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		LOG.info("TRAZA DE INICIO");
 
-		// Creación de productos
+		LOG.info("Inicio generación de productos y pedidos.");
+		
+		// Creación de productos.
 		Product pr1 = new Product(121L, "Ordernador", 800.26);
 		Product pr2 = new Product(846L, "Iphone 20", 1999);
 		Product pr3 = new Product(943L, "Auriculares", 15);
@@ -87,6 +96,10 @@ public class Main implements CommandLineRunner {
 		genericOrder.addProductToAnOrder(pedido2, lista1);
 		genericOrder.addProductToAnOrder(pedido3, lista2);
 		genericOrder.addProductToAnOrder(pedido4, lista3);
+		
+		LOG.info("Fin inserciones de productos y pedidos");
+
+		LOG.info("Inicio del desglose de pedidos.");
 
 		// Desgolse de los pedidos.
 		System.out.println("--------------------Pedido 1---------------------");
@@ -104,5 +117,9 @@ public class Main implements CommandLineRunner {
 		System.out.println("\n--------------------Pedido 4---------------------");
 		
 		ordersPeninsula.breakdownOrder(pedido4);
+		
+		LOG.info("Fin del desglose de pedidos.");
+		
+		LOG.info("TRAZA FIN");
 	}
 }

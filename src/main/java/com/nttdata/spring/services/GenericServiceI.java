@@ -6,7 +6,7 @@ import com.nttdata.spring.repository.Order;
 import com.nttdata.spring.repository.Product;
 
 /**
- * Interfaz genérica
+ * Interfaz de servicio genérico
  * 
  * @author manoli
  *

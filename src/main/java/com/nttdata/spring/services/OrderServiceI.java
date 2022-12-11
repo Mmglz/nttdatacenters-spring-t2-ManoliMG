@@ -3,7 +3,7 @@ package com.nttdata.spring.services;
 import com.nttdata.spring.repository.Order;
 
 /**
- * Interfaz de pedido
+ * Interfaz del servicio de pedido
  * 
  * @author manoli
  *
